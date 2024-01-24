@@ -24,4 +24,8 @@ jobs:
         docker push tziviarot/appcicd:5.0
 
     - name: Push Docker image to GitHub Container Registry
-      run: docker push ghcr.io/tzivia-rot/appcicd:5.0
+      run: |
+        docker push ghcr.io/tzivia-rot/appcicd:5.0
+      env:
+        OCI_SOURCE_LABEL: "https://github.com/tzivia-rot/ci-cd-question"
+
