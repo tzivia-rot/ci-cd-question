@@ -10,7 +10,7 @@ function signelNumber(array){
    return sum;
 }
 const myVariable = process.env.MY_VARIABLE;
-console.log(signelNumber(myVariable));
+console.log("the signel num is:",signelNumber(myVariable));
 app.listen(port, () => {
     console.log(`Server running at http://localhost:${port}`);
   });
