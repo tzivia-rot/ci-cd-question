@@ -9,16 +9,8 @@ function signelNumber(array){
    }
    return sum;
 }
-app.get('/:num', (req, res) => {
-    const inputData = req.params;
-    console.log('Received input:', inputData);
-    res.send(signelNumber(inputData));
-  });
-
-
-array=[1,1,2,4,4];
-console.log(signelNumber(array));
-
+const myVariable = process.env.MY_VARIABLE;
+console.log(signelNumber(myVariable));
 app.listen(port, () => {
     console.log(`Server running at http://localhost:${port}`);
   });
