@@ -22,3 +22,6 @@ jobs:
       run: |
         docker build -t tziviarot/ci-cd:4.0 .
         docker push  tziviarot/ci-cd:4.0
+
+    - name: Push Docker image to GitHub Container Registry
+      run: docker push ghcr.io/tzivia-rot/tziviarot/ci-cd:4.0
