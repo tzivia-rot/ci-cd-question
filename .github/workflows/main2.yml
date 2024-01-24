@@ -1,0 +1,25 @@
+name: Build on Push
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Set up Docker
+      uses: actions/setup-docker@v2
+      with:
+        dockerfile: Dockerfile  # אם יש לך Dockerfile בתיקייה הראשית של המחזור
+
+    - name: Build Docker Image
+      run: docker build -t tziviarot/ci-cd:4.0 .
+
+    - name: Run Docker Container
+      run: docker run -e MY_VARIABLE=[4,1,2,1,2] tziviarot/ci-cd:4.0
