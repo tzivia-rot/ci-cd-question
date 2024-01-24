@@ -15,7 +15,7 @@ jobs:
 
     - name: Login to Docker Hub
       run: |
-        echo "DOCKER_PASSWORD=secrets.dckr_pat_jM-Gh55bNVw0uFnjL2y9zkojpe4
+        echo "DOCKER_PASSWORD=secrets.tzivia214384
         echo "DOCKER_USERNAME=secrets.tziviarot
         echo secrets.dckr_pat_jM-Gh55bNVw0uFnjL2y9zkojpe4 | docker login -u secrets.tziviarot --password-stdin
     - name: Build and push Docker image
