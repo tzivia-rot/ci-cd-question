@@ -16,10 +16,10 @@ jobs:
     - name: Set up Docker
       uses: actions/setup-docker@v2
       with:
-        dockerfile: Dockerfile  # אם יש לך Dockerfile בתיקייה הראשית של המחזור
+        dockerfile: Dockerfile 
 
     - name: Build Docker Image
       run: docker build -t tziviarot/ci-cd:4.0 .
 
     - name: Run Docker Container
-      run: docker run -e MY_VARIABLE=[4,1,2,1,2] tziviarot/ci-cd:4.0
+      run: docker run -e tziviarot/ci-cd:4.0
