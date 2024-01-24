@@ -1,0 +1,24 @@
+name: Docker Build
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Login to Docker Hub
+      run: |
+           echo "DOCKER_PASSWORD=${{ secrets.DOCKER_PASSWORD }}" 
+           echo "DOCKER_USERNAME=${{ secrets.DOCKER_USERNAME }}"
+        # echo secrets.dckr_pat_jM-Gh55bNVw0uFnjL2y9zkojpe4 | docker login -u secrets.tziviarot --password-stdin
+    - name: Build and push Docker image
+      run: |
+        docker build -t tziviarot/cicd:1.4 .
+        docker push  tziviarot/cicd:1.4
