@@ -3,6 +3,7 @@ const express = require('express');
 const app = express();
 const port = 5000;
 function signelNumber(array){
+    console.log(array)
     sum=0;
    for( i=0;i<array.length;i++){
        sum=sum^array[i];
